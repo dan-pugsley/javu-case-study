@@ -1,13 +1,13 @@
 # Javu: AI language-learning, built solo end-to-end
 
-**A full-stack AI language-learning product: a React Native app, a Laravel/AWS backend, and a multilingual dictionary that _builds itself on demand_. Designed, built, and shipped solo.**
+**A full-stack AI language-learning product: a React Native app, a Laravel/AWS backend, and a multilingual dictionary that _builds itself on demand_. Built and shipped solo, with UI design by [Léa Poisson](https://leapoisson.com/).**
 
 [![App Store](https://img.shields.io/badge/App_Store-0D96F6?logo=apple&logoColor=white)](https://apps.apple.com/us/app/javu-learn-words-your-way/id6743112606)
 [![Google Play](https://img.shields.io/badge/Google_Play-414141?logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=com.javu.app)
 [![Website](https://img.shields.io/badge/Website-javu.app-7C3AED)](https://javu.app)
 
 > **Founder-engineer.** I ship AI products end-to-end: systems architecture with a designer's eye.
-> Javu is the proof, where I owned the product, the design, the full stack, the AI integration, and the release.
+> Javu is the proof, where I owned the product, the full stack, the AI integration, and the release, and shaped the UI in close partnership with its designer.
 
 > **This repository is a case study: documentation, diagrams, and screenshots only. No application source code lives here.** It describes how Javu is built and the engineering decisions behind it.
 
@@ -53,10 +53,10 @@ It's live on iOS and Android, with a Next.js marketing site at [javu.app](https:
 
 ## My role
 
-**Everything built solo.** There was no team to divide this across:
+**Everything built solo.** I engineered and shipped the entire product myself; the visual design is the one exception, credited just below.
 
 - **Product**: scope, learning model, monetization, the whole feature set.
-- **Design**: UI, motion, micro-interactions, brand, the marketing site.
+- **Design**: the visual design (UI, colour, layout, illustration) is by [Léa Poisson](https://leapoisson.com/); I shaped its direction and built all of it in code, including the motion and micro-interactions.
 - **Full-stack engineering**: React Native app, Laravel API, two databases, the AI pipeline, infrastructure.
 - **AI integration**: orchestrating OpenAI, DeepL, and Google Cloud across a cached content pipeline.
 - **Ship & operate**: App Store / Play releases (EAS), OTA updates, monitoring, backups, support.
@@ -251,7 +251,7 @@ Behind the simple "review your words" loop is a fair amount of machinery, all of
 
 ## Craft
 
-Javu is built to _feel_ good, not just to function. Concrete examples, all in the React Native app:
+The visual design is [Léa Poisson](https://leapoisson.com/)'s; what I obsessed over in code is how it _feels_ in the hand. Concrete examples, all in the React Native app:
 
 - **Hand-tuned motion.** A small animation system mirroring Tailwind's easing curves, with deliberately short in/out timings (~80–100ms) so the UI feels crisp rather than floaty. Heavy or custom visuals (the letter-grid game, animated backgrounds, progress rings) use **Skia** and **Reanimated** for 60fps rendering off the JS thread; **Lottie** and confetti mark wins.
 - **Haptics wired to meaning.** Light impacts on toggles, a success notification pattern on a correct answer: touch feedback tied to events, not sprinkled at random.
@@ -279,4 +279,4 @@ Javu is built to _feel_ good, not just to function. Concrete examples, all in th
 
 ---
 
-<sub>Built solo by Dan Pugsley. This case study is documentation only and contains no source code, credentials, or proprietary prompt text.</sub>
+<sub>Built and shipped solo by Dan Pugsley; UI design by [Léa Poisson](https://leapoisson.com/). This case study is documentation only and contains no source code, credentials, or proprietary prompt text.</sub>
