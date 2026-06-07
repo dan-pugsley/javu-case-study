@@ -53,7 +53,7 @@ It's live on iOS and Android, with a Next.js marketing site at [javu.app](https:
 
 ## My role
 
-**Everything built solo.** I engineered and shipped the entire product myself; the visual design is the one exception, credited just below.
+I engineered and shipped the entire product myself; the visual design is the one exception, credited just below.
 
 - **Product**: scope, learning model, monetization, the whole feature set.
 - **Design**: the visual design (UI, colour, layout, illustration) is by [Léa Poisson](https://leapoisson.com/); I shaped its direction and built all of it in code, including the motion and micro-interactions.
