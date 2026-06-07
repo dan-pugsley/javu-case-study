@@ -1,0 +1,61 @@
+%% Javu — system architecture
+%% Render: https://mermaid.live  or  `mmdc -i architecture.mmd -o architecture.svg`
+%% This is the same diagram embedded in ../README.md, kept here as standalone source.
+
+flowchart TB
+    subgraph clients["Clients"]
+        app["React Native / Expo app<br/>iOS · Android"]
+        web["Next.js marketing site<br/>javu.app"]
+    end
+
+    subgraph edge["Edge"]
+        cdn["AWS CloudFront<br/>signed URLs for media"]
+    end
+
+    subgraph api["Backend — Laravel 12 / PHP 8.4 on AWS"]
+        rest["REST API<br/>Sanctum + social-token auth"]
+        worker["Queue workers<br/>+ scheduled jobs"]
+        corpussvc["Corpus service<br/>on-demand enrichment"]
+    end
+
+    subgraph stores["Data + storage"]
+        appdb[("PostgreSQL<br/><b>app</b> DB")]
+        corpusdb[("PostgreSQL<br/><b>corpus</b> DB")]
+        redis[("Redis<br/>cache + queues")]
+        s3["AWS S3<br/>audio + images"]
+    end
+
+    subgraph external["External AI / content"]
+        openai["OpenAI · gpt-5-mini"]
+        deepl["DeepL"]
+        gtts["Google Cloud TTS"]
+        unsplash["Unsplash"]
+    end
+
+    subgraph platform["Platform services"]
+        revenuecat["RevenueCat"]
+        firebase["Firebase auth/analytics"]
+        expopush["Expo Push"]
+        email["Resend / SES"]
+        sentry["Sentry"]
+    end
+
+    app --> rest
+    web --> rest
+    app --> cdn --> s3
+
+    rest --> appdb
+    rest --> redis
+    rest --> corpussvc
+    corpussvc --> corpusdb
+    corpussvc --> openai & deepl & gtts & unsplash
+    corpussvc --> s3
+
+    worker --> appdb
+    worker --> expopush
+    app --> revenuecat
+    rest --> revenuecat
+    app --> firebase
+    rest --> email
+    app -.-> sentry
+    rest -.-> sentry
