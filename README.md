@@ -7,9 +7,9 @@
 [![Website](https://img.shields.io/badge/Website-javu.app-7C3AED)](https://javu.app)
 
 > **Founder-engineer.** I ship AI products end-to-end: systems architecture with a designer's eye.
-> Javu is the proof. I owned the product, the design, the full stack, the AI integration, and the release.
+> Javu is the proof, where I owned the product, the design, the full stack, the AI integration, and the release.
 
-> ℹ️ **This repository is a case study: documentation, diagrams, and screenshots only. No application source code lives here.** It describes how Javu is built and the engineering decisions behind it.
+> **This repository is a case study: documentation, diagrams, and screenshots only. No application source code lives here.** It describes how Javu is built and the engineering decisions behind it.
 
 <p align="center">
   <img src="assets/screenshots/home.png"     width="30%" alt="Home dashboard showing the quiz launcher, Word of the Day, and per-language progress" />
@@ -53,7 +53,7 @@ It's live on iOS and Android, with a Next.js marketing site at [javu.app](https:
 
 ## My role
 
-**Solo. Everything.** There was no team to divide this across:
+**Everything built solo.** There was no team to divide this across:
 
 - **Product**: scope, learning model, monetization, the whole feature set.
 - **Design**: UI, motion, micro-interactions, brand, the marketing site.
@@ -251,7 +251,7 @@ Behind the simple "review your words" loop is a fair amount of machinery, all of
 
 ## Craft
 
-Javu is built to _feel_ designed, not just to function. Concrete examples, all in the React Native app:
+Javu is built to _feel_ good, not just to function. Concrete examples, all in the React Native app:
 
 - **Hand-tuned motion.** A small animation system mirroring Tailwind's easing curves, with deliberately short in/out timings (~80–100ms) so the UI feels crisp rather than floaty. Heavy or custom visuals (the letter-grid game, animated backgrounds, progress rings) use **Skia** and **Reanimated** for 60fps rendering off the JS thread; **Lottie** and confetti mark wins.
 - **Haptics wired to meaning.** Light impacts on toggles, a success notification pattern on a correct answer: touch feedback tied to events, not sprinkled at random.
